@@ -3,35 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name</title>
+  <title>Custom Widgets</title>
+  <meta name="description" content="Custom widgets made to order. Simple, durable, and made for real life." />
+
   <style>
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b0f14;color:#f3f5f7}
-    .wrap{max-width:980px;margin:0 auto;padding:56px 18px 70px}
-    h1{margin:0 0 10px;font-size:clamp(28px,4vw,44px);letter-spacing:-.02em}
-    p{margin:0 0 18px;color:#a8b0b8;line-height:1.5}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-    .photo{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:#0c121b;aspect-ratio:4/3}
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
-    footer{margin-top:18px;color:#a8b0b8;font-size:14px}
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1622;
+      --text:#f3f5f7;
+      --muted:#a8b0b8;
+      --border:rgba(255,255,255,.10);
+      --btn:rgba(255,255,255,.10);
+      --btn2:#f3f5f7;
+      --btn2text:#0b0f14;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    .wrap{max-width:1040px;margin:0 auto;padding:56px 18px 70px}
+    header{display:grid;gap:18px;grid-template-columns: 1.1fr .9fr;align-items:start}
+    @media (max-width:900px){ header{grid-template-columns:1fr} }
+
+    h1{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.02em;line-height:1.1}
+    p{margin:0;color:var(--muted);max-width:70ch}
+
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:999px;border:1px solid var(--border);
+      background:var(--btn);color:var(--text);text-decoration:none;
+      font-weight:600;font-size:14px;
+    }
+    .btn.primary{background:var(--btn2);color:var(--btn2text);border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .pillRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .pill{
+      padding:6px 10px;border-radius:999px;border:1px solid var(--border);
+      color:var(--muted);font-size:13px;background:rgba(255,255,255,.04)
+    }
+
+    .miniCard{
+      border:1px solid var(--border);border-radius:16px;background:var(--card);
+      padding:14px;
+    }
+    .miniCard strong{display:block;margin-bottom:6px}
+    .miniCard a{color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
+    .miniCard a:hover{border-bottom-color: rgba(255,255,255,.6)}
+
+    .grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:12px;
+    }
+    .photo{
+      border-radius:16px;overflow:hidden;border:1px solid var(--border);
+      background:#0c121b;
+    }
+    .photo img{width:100%;height:320px;object-fit:cover;display:block}
+    .caption{padding:12px 12px 14px;color:var(--muted);font-size:14px}
+    .caption strong{color:var(--text);font-weight:700}
+
+    footer{margin-top:20px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <h1>Noah Myers</h1>
-    <p>Simple landing page for a class demo.</p>
+    <header>
+      <div>
+        <h1>Custom widgets that people actually use.</h1>
+        <p>
+          I design and make small-batch widgets you can customize for your needs—size, finish, and details.
+          Built to be held, used, and shown off.
+        </p>
 
-    <div class="grid">
-      <a class="photo" href="assets/photos/istockphoto-1082467846-612x612.jpg">
-        <img src="assets/photos/istockphoto-1082467846-612x612.jpg" alt="Photo 1" loading="lazy">
-      </a>
-      <a class="photo" href="assets/photos/small-asian-family-portrait-at-home-photo.jpg">
-        <img src="assets/photos/small-asian-family-portrait-at-home-photo.jpg" alt="Photo 2" loading="lazy">
-      </a>
-    </div>
+        <div class="ctaRow">
+          <!-- Replace the email below -->
+          <a class="btn primary" href="mailto:youremail@example.com?subject=Widget%20Inquiry">Email me</a>
+          <a class="btn" href="#photos">See customer photos</a>
+          <!-- Optional: link to an order form or Etsy/Shopify -->
+          <a class="btn" href="#" title="Add your store link">Order / Quote</a>
+        </div>
 
-    <footer>© <span id="y"></span> Your Name</footer>
+        <div class="pillRow">
+          <span class="pill">Made to order</span>
+          <span class="pill">Custom options</span>
+          <span class="pill">Fast turnaround</span>
+        </div>
+      </div>
+
+      <div class="miniCard">
+        <strong>Quick details</strong>
+        <div style="display:grid; gap:8px; color: var(--muted); font-size:14px;">
+          <div>✅ Custom sizes & finishes</div>
+          <div>✅ Small-batch / local</div>
+          <div>✅ Gift-ready options</div>
+          <div style="margin-top:8px;">
+            <a href="mailto:youremail@example.com?subject=Widget%20Inquiry">youremail@example.com</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="photos" class="grid">
+      <!-- Your existing images (paths match your repo structure) -->
+      <figure class="photo">
+        <a href="assets/photos/istockphoto-1082467846-612x612.jpg">
+          <img src="assets/photos/istockphoto-1082467846-612x612.jpg" alt="Customer holding a custom widget" loading="lazy">
+        </a>
+        <figcaption class="caption">
+          <strong>Family photo #1</strong><br/>
+          “Our custom widgets, ready to go.”
+        </figcaption>
+      </figure>
+
+      <figure class="photo">
+        <a href="assets/photos/small-asian-family-portrait-at-home-photo.jpg">
+          <img src="assets/photos/small-asian-family-portrait-at-home-photo.jpg" alt="Customer holding a custom widget" loading="lazy">
+        </a>
+        <figcaption class="caption">
+          <strong>Family photo #2</strong><br/>
+          “Perfect size, exactly what we wanted.”
+        </figcaption>
+      </figure>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Your Widget Business</div>
+      <div><a class="btn" style="padding:7px 10px" href="mailto:youremail@example.com?subject=Widget%20Inquiry">Contact</a></div>
+    </footer>
   </div>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
