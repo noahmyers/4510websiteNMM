@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name</title>
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b0f14;color:#f3f5f7}
+    .wrap{max-width:980px;margin:0 auto;padding:56px 18px 70px}
+    h1{margin:0 0 10px;font-size:clamp(28px,4vw,44px);letter-spacing:-.02em}
+    p{margin:0 0 18px;color:#a8b0b8;line-height:1.5}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .photo{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:#0c121b;aspect-ratio:4/3}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    footer{margin-top:18px;color:#a8b0b8;font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Noah Myers</h1>
+    <p>Simple landing page for a class demo.</p>
+
+    <div class="grid">
+      <a class="photo" href="assets/photos/istockphoto-1082467846-612x612.jpg">
+        <img src="assets/photos/istockphoto-1082467846-612x612.jpg" alt="Photo 1" loading="lazy">
+      </a>
+      <a class="photo" href="assets/photos/small-asian-family-portrait-at-home-photo.jpg">
+        <img src="assets/photos/small-asian-family-portrait-at-home-photo.jpg" alt="Photo 2" loading="lazy">
+      </a>
+    </div>
+
+    <footer>© <span id="y"></span> Your Name</footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
